@@ -165,11 +165,32 @@ async function downloadTransparentPNG() {
     img.src = base64Image;
 
     return new Promise((resolve) => {
-      img.onload = function() {
-        // Clear canvas
-        ctx.clearRect(0, 0, width, height);
+      img.onload = function () {
         // Draw the image on canvas
         ctx.drawImage(img, 0, 0, width, height);
+
+        // Get image data
+        const imageData = ctx.getImageData(0, 0, width, height);
+        const data = imageData.data;
+
+        // Loop through each pixel and make white transparent
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i];
+          const g = data[i + 1];
+          const b = data[i + 2];
+          const a = data[i + 3];
+
+        
+          if (r > 240 && g > 240 && b > 240) {
+   
+            data[i + 3] = 0;
+          }
+        }
+
+        // Put the modified image data back on the canvas
+        ctx.putImageData(imageData, 0, 0);
+
+        // Convert to blob
         canvas.toBlob((blob) => {
           resolve(blob);
         }, "image/png");
@@ -177,6 +198,7 @@ async function downloadTransparentPNG() {
     });
   }
 
+ 
   const transparentBlob = await createTransparentPNGBlob(base64EncodedImage, 512, 512);
   const link = document.createElement("a");
   link.href = URL.createObjectURL(transparentBlob);
