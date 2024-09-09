@@ -1,19 +1,21 @@
+
 html, body {
   height: 100%;
   margin: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Allow for vertical arrangement */
+  justify-content: center; /* Vertically center the button row */
+  align-items: center;     /* Horizontally center the button row */
   background-repeat: no-repeat;
   background-size: 10%;
   background-attachment: cover;
 }
 
-
 .button-row {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  justify-content: center; /* Center the buttons horizontally */
 }
 
 .button-36 {
@@ -48,7 +50,6 @@ html, body {
   font-size: 18px;
 }
 
-
 .button-36:focus {
   box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
     rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
@@ -60,26 +61,18 @@ html, body {
   transform: translateY(-2px);
 }
 
-
 .button-36:active {
   box-shadow: #d6d6e7 0 3px 7px inset;
   transform: translateY(2px);
 }
 
 footer {
-     background-color: #f1f1f1;
-     text-align: center;
-     padding: 10px 0;
-     position: fixed;
-     left: 0;
-     bottom: 0;
-     width: 100%;
-     font-family: Arial, sans-serif;
-   }
-
-footer {
-  margin-top: auto;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  font-family: Arial, sans-serif;
 }
