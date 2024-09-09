@@ -1,0 +1,33 @@
+{
+  "name": "Base64 Image Processing",
+  "short_name": "ImageBase64",
+  "description": "A web application for processing images and converting them to Base64, along with downloading icons, CSS, and HTML.",
+  "icons": [
+    {
+      "src": "favicon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favicon-32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "favicon-196.png",
+      "type": "image/png",
+      "sizes": "196x196"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "scope": "/",
+  "orientation": "portrait"
+}

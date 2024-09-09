@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>base64 image processing</title>
+
+    <!-- icons -->
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="16x16 32x32"
+      href="favicon.ico"
+    />
+    <link rel="apple-touch-icon" sizes="any" href="apple-touch-icon.png" />
+    <link rel="icon" sizes="32x32" href="favicon-32.png" />
+
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="favicon-196.png" />
+
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" sizes="192x192" href="favicon-192.png" />
+
+    <!-- meta tags -->
+
+    <meta name="title" content="Base64 Image Processing" />
+    <meta
+      name="description"
+      content="Efficient base64 image processing with download options for text, CSS, HTML, SVG, and icons."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://base64.jessejesse.com" />
+    <meta property="og:title" content="Base64 Image Processing" />
+    <meta
+      property="og:description"
+      content="Efficient base64 image processing with download options for text, CSS, HTML, SVG, and icons."
+    />
+    <meta property="og:image" content="https://base64.jessejesse.com/og.png" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://base64.jessejesse.com" />
+    <meta property="twitter:title" content="Base64 Image Processing" />
+    <meta
+      property="twitter:description"
+      content="Efficient base64 image processing with download options for text, CSS, HTML, SVG, and icons."
+    />
+    <meta
+      property="twitter:image"
+      content="https://base64.jessejesse.com/og.png"
+    />
+    <meta name="author" content="Jesse Roper" />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="button-row">
+      <label for="fileInput" class="button-36">
+        <img
+          id="thumbnail"
+          src="https://api.iconify.design/material-symbols:add-photo-alternate-outline.svg?color=%23000000"
+          alt="Thumbnail"
+          style="width: 50px; height: 50px"
+        />
+        <span></span>
+        <input
+          type="file"
+          id="fileInput"
+          accept="image/*"
+          onchange="displayImage(this)"
+          style="display: none"
+        />
+      </label>
+
+      <!------BUTTONS------>
+      <button onclick="encodeImage()" class="button-36">Base64</button>
+      <button onclick="downloadImage()" class="button-36">Text</button>
+      <button onclick="downloadCSS()" class="button-36">CSS</button>
+      <button onclick="copyToClipboard()" class="button-36">copy</button>
+      <button onclick="downloadHTML()" class="button-36">HTML</button>
+      <button onclick="convertToSVG()" class="button-36">SVG</button>
+      <button onclick="downloadIcons()" class="button-36">Icons</button>
+      <button id="noBackgroundButton" class="button-36">RemoveBG</button>
+    </div>
+
+    <div id="encodedImage"></div>
+
+    <textarea
+      id="encodedCode"
+      rows="5"
+      cols="50"
+      readonly
+      style="display: none"
+    ></textarea>
+
+    <footer>base64.JesseJesse.com&nbsp;&copy;2024&nbsp;</footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
